@@ -29,6 +29,26 @@ public class E06Leetcode21 {
 
         return s.next;
     }
+    
+    public ListNode mergeTwoLists1(ListNode p1, ListNode p2) {
 
+
+        if (p2 == null) {
+            return p1;
+        }
+
+        if (p1 == null) {
+            return p2;
+        }
+
+        if (p1.val < p2.val) {
+            p1.next = mergeTwoLists1(p1.next,p2);
+            return p1;
+        } else {
+            p2.next = mergeTwoLists1(p1, p2.next);
+            return p2;
+        }
+
+    }
 
 }
