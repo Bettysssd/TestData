@@ -1,4 +1,4 @@
-package recursion;
+package datastructure;
 
 public class ListNode {
     public int val;

@@ -1,3 +1,7 @@
+package leetcode;
+
+import datastructure.ListNode;
+
 public class E06Leetcode21 {
     public ListNode mergeTwoLists(ListNode p1, ListNode p2) {
 

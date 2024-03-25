@@ -1,3 +1,7 @@
+package leetcode;
+
+import datastructure.ListNode;
+
 public class E05Leetcode82 {
     public ListNode deleteDuplicates(ListNode p) {
         if (p == null || p.next == null) {

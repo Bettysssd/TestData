@@ -1,6 +1,6 @@
 package leetcode;
 
-import recursion.ListNode;
+import datastructure.ListNode;
 
 public class E08Leetcode876 {
 
