@@ -1,6 +1,7 @@
 package test;
 
 import org.junit.Test;
+import queue.ArrayQueue3;
 import queue.LinkedListQueue;
 
 import java.util.Iterator;
@@ -30,5 +31,24 @@ public class TestLinkedListQueue {
         System.out.println(queue.peek());
         queue.offer(2);
         System.out.println(queue.peek());
+    }
+
+
+    @Test
+    public void test() {
+        ArrayQueue3<Integer> queue = new ArrayQueue3<Integer>(10);
+        queue.head = 2147483640;
+        queue.tail = queue.head;;
+
+        for (int i = 0; i < 10; i++) {
+            queue.offer(i);
+        }
+
+
+        for (Integer value: queue) {
+            System.out.println(value);
+        }
+        
+
     }
 }

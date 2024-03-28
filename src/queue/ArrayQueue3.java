@@ -8,8 +8,8 @@ import java.util.Iterator;
 public class ArrayQueue3<E> implements Queue<E>, Iterable<E> {
 
     private final E [] array;
-    private int head = 0;
-    private int tail = 0;
+    public int head = 0;
+    public int tail = 0;
 
     public ArrayQueue3(int capacity) {
         array = (E[])new Object[capacity];
@@ -20,7 +20,7 @@ public class ArrayQueue3<E> implements Queue<E>, Iterable<E> {
         if (isFull()) {
             return false;
         }
-        array[tail % array.length] = value;
+        array[(int) (Integer.toUnsignedLong(tail) % array.length)] = value;
         tail++;
         return true;
     }
@@ -30,7 +30,7 @@ public class ArrayQueue3<E> implements Queue<E>, Iterable<E> {
         if (isEmpty()) {
             return null;
         }
-        E value = array[head % array.length];
+        E value = array[(int) (Integer.toUnsignedLong(head) % array.length)];
         head++;
         return value;
     }
@@ -41,7 +41,7 @@ public class ArrayQueue3<E> implements Queue<E>, Iterable<E> {
         if (isEmpty()) {
             return null;
         }
-        return array[head % array.length];
+        return array[(int) (Integer.toUnsignedLong(head) % array.length)];
     }
 
     @Override
@@ -65,7 +65,7 @@ public class ArrayQueue3<E> implements Queue<E>, Iterable<E> {
 
             @Override
             public E next() {
-                E value = array[p % array.length];
+                E value = array[(int) (Integer.toUnsignedLong(p) % array.length)];
                 p++;
                 return value;
             }
