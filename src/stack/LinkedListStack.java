@@ -1,3 +1,7 @@
+package stack;
+
+import datastructure.Stack;
+
 import java.util.Iterator;
 
 public class LinkedListStack<E> implements Stack<E>, Iterable<E> {

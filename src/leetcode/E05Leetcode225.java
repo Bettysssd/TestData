@@ -4,6 +4,7 @@ import queue.ArrayQueue3;
 
 public class E05Leetcode225 {
 
+    @SuppressWarnings("all")
     ArrayQueue3<Integer> queue = new ArrayQueue3<>(100);
     private int size = 0;
 

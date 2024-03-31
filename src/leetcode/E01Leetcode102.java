@@ -10,15 +10,15 @@ import java.util.List;
 public class E01Leetcode102 {
 
     public List<List<Integer>> levelOrder(TreeNode root) {
-        LinkedListQueue<TreeNode> queue = new LinkedListQueue<>();
         List<List<Integer>> result = new ArrayList<>();
         if (root == null) {
             return result;
         }
+        LinkedListQueue<TreeNode> queue = new LinkedListQueue<>();
         queue.offer(root);
         int c1 = 1;
         while (!queue.isEmpty()) {
-            List<Integer> level = new ArrayList<>();
+            List<Integer> level = new ArrayList<>(); // 保存每一层的节点结果
             int c2 = 0;
             for (int i = 0; i < c1; i++) {
                 TreeNode n = queue.poll();

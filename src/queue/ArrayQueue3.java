@@ -31,6 +31,7 @@ public class ArrayQueue3<E> implements Queue<E>, Iterable<E> {
             return null;
         }
         E value = array[(int) (Integer.toUnsignedLong(head) % array.length)];
+        array[(int) (Integer.toUnsignedLong(head) % array.length)] = null;
         head++;
         return value;
     }

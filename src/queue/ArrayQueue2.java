@@ -36,6 +36,7 @@ public class ArrayQueue2<E> implements Queue<E>, Iterable<E> {
         E value = array[head];
         head = (head + 1) % array.length;
         size--;
+        array[head] = null;
         return value;
     }
 
