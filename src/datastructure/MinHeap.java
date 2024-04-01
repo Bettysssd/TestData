@@ -8,7 +8,7 @@ public class MinHeap {
     }
 
     public boolean offer(ListNode offered) {
-        if (isEmpty()) {
+        if (isFull()) {
             return false;
         }
         int child = size++;
@@ -47,7 +47,7 @@ public class MinHeap {
         if (left < size && array[left].val < array[min].val) {
             min = left;
         }
-        if (right > size && array[right].val < array[min].val) {
+        if (right < size && array[right].val < array[min].val) {
             min = right;
         }
         if (min != parent) {
@@ -62,12 +62,12 @@ public class MinHeap {
         array[j] = t;
     }
 
-        public boolean isEmpty() {
-            return size == 0;
-        }
+    public boolean isEmpty() {
+        return size == 0;
+    }
 
 
-        public boolean isFull() {
-            return size == array.length;
-        }
+    public boolean isFull() {
+        return size == array.length;
+    }
 }
