@@ -1,4 +1,4 @@
-package priority;
+package queue;
 
 import datastructure.Priority;
 import datastructure.Queue;
