@@ -1,6 +1,11 @@
+package leetcode;
+
+import datastructure.ListNode;
+import datastructure.MinHeap1;
+
 public class E01Leetcode23 {
     public static ListNode mergeKLists(ListNode[] lists) {
-        MinHeap heap = new MinHeap(lists.length);
+        MinHeap1 heap = new MinHeap1(lists.length);
         for (ListNode h : lists) {
             //加入到小顶堆
             if (h != null) {

@@ -2,12 +2,12 @@ package datastructure;
 
 import java.util.Arrays;
 
-// 小顶堆
-public class MinHeap {
+// 大顶堆
+public class MaxHeap {
     int[] array;
     int size;
 
-    public MinHeap(int capacity) {
+    public MaxHeap(int capacity) {
         this.array = new int[capacity];
     }
 
@@ -41,6 +41,8 @@ public class MinHeap {
         return top;
     }
 
+
+
     // 获取并删除指定位置的元素
     public int poll(int index) {
 
@@ -62,10 +64,6 @@ public class MinHeap {
         down(0);
     }
 
-    public  boolean isFull() {
-        return size == array.length;
-    }
-
     // 堆的尾部添加元素
     public boolean offer(int offered) {
         if (size == array.length) {
@@ -81,7 +79,7 @@ public class MinHeap {
         int child = size;
         while (child > 0) {
             int parent = (child - 1) / 2;
-            if (offered < array[parent]) {
+            if (offered > array[parent]) {
                 array[child] = array[parent];
             } else {
                 break;
@@ -91,7 +89,7 @@ public class MinHeap {
         array[child] = offered;
 
     }
-    public MinHeap(int[] array) {
+    public MaxHeap(int[] array) {
         this.array = array;
         this.size = array.length;
         heapify();
@@ -101,18 +99,18 @@ public class MinHeap {
     public void down(int parent) {
         int left = 2 * parent + 1;
         int right = left + 1;
-        int min = parent;
-        if (left < size && array[left] < array[min]) {
-            min = left;
+        int max = parent;
+        if (left < size && array[left] > array[max]) {
+            max = left;
         }
 
-        if (right < size && array[right] < array[min]) {
-            min = right;
+        if (right < size && array[right] > array[max]) {
+            max = right;
         }
 
-        if (min != parent) { // 表示已经找到了更大的
-            swap(min, parent);
-            down(min);
+        if (max != parent) { // 表示已经找到了更大的
+            swap(max, parent);
+            down(max);
         }
     }
 
@@ -126,7 +124,7 @@ public class MinHeap {
 
     public static void main(String[] args) {
         int[] array = {2, 3, 1, 7, 6, 4, 5};
-        MinHeap heap = new MinHeap(array);
+        MaxHeap heap = new MaxHeap(array);
         System.out.println(Arrays.toString(heap.array));
 
         while (heap.size > 1) {
