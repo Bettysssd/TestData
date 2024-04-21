@@ -2,6 +2,8 @@ package binarysearch;
 
 import org.junit.Test;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class TestDynamicArray {
 
     @Test
@@ -24,14 +26,17 @@ public class TestDynamicArray {
     @Test
     public void test2() {
         DynamicArray dynamicArray = new DynamicArray();
+        AtomicInteger sum = new AtomicInteger();
         dynamicArray.addLast(1);
         dynamicArray.addLast(2);
         dynamicArray.addLast(3);
         dynamicArray.addLast(4);
-
         dynamicArray.forEach((element)->{
-            System.out.println(element);
+//            System.out.println(element);
+            sum.addAndGet(element);
         });
+
+        System.out.println(sum.get());
     }
 
 
